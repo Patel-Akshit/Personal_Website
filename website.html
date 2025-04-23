@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshit Patel</title>
+  <link rel="stylesheet" href="website.css" />
+</head>
+<body>
+  <img src="Scene.gif" alt="Akshit Patel" class="profile-photo" />
+  <div class="name">Akshit Patel</div>
+  <div class="subtitle">MACS alumni @Dalhousie University<br/>Halifax, Nova Scotia, Canada</div>
+
+  <div>
+    <table>
+        <tr>
+            <td><a href="https://www.facebook.com/akshit.patel.7583"><img src="facebook.png" alt="facebook" class="icon" title="Facebook" onclick="snow(event)" /></a></td>
+            <td><a href="https://www.instagram.com/_akshit.patel_/"><img src="instagram.png" alt="instagram" class="icon" title="Instagram" onclick="snow(event)" /></a></td>
+            <td><a href="https://www.linkedin.com/in/patel-akshit/"><img src="linkedin.png" alt="linkedin" class="icon" title="LinkedIn" onclick="snow(event)" /></a></td>
+          <td onclick="toggleInfo('email')">
+            <img src="gmail.png" alt="gmail" class="icon" title="Email" />
+          </td>
+          <td><span id="email" class="info"><a href="mailto:akshitpatel042@gmail.com">akshitpatel042@gmail.com</a></span></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/Patel-Akshit"><img src="github.png" alt="github" class="icon" title="GitHub"  onclick="snow(event)" /></a></td>
+            <td><a href="https://drive.google.com/file/d/1C01d8rq42JPW0vqsCleTl_TfpC1x4BzX/view"><img src="resume.png" alt="resume" class="icon" title="Resume" onclick="snow(event)" /></a></td>
+            <td><a href="https://portfolio-of-akshit.vercel.app/"><img src="portfolio.png" alt="portfolio" class="icon" title="Portfolio" onclick="snow(event)" /></a></td>
+          <td onclick="toggleInfo('phone')">
+            <img src="phone.png" alt="phone" class="icon" title="Phone" />
+          </td>
+          <td><span id="phone" class="info">+19029897981</span></td>
+        </tr>
+      </table>
+  </div>
+
+<!-- JS -->
+
+<script>
+    function snow(e) {
+      for (let i = 0; i < 20; i++) {
+        const flake = document.createElement('div');
+        flake.className = 'snowflake';
+        flake.style.left = (e.pageX + Math.random() * 100 - 50) + 'px';
+        flake.style.top = e.pageY + 'px';
+        flake.style.animationDuration = (Math.random() * 2 + 1) + 's';
+        flake.style.width = flake.style.height = (Math.random() * 5 + 5) + 'px';
+        document.body.appendChild(flake);
+        setTimeout(() => flake.remove(), 3000);
+      }
+    }
+
+    function toggleInfo(id) {
+      const info = document.getElementById(id);
+      info.style.display = info.style.display === 'inline' ? 'none' : 'inline';
+    }
+  </script>
+
+</body>
+</html>
